@@ -1,26 +1,14 @@
 ﻿using System;
-
-#if NUNIT
-using TestClass = NUnit.Framework.TestFixtureAttribute;
-using TestMethod = NUnit.Framework.TestAttribute;
-using TestCleanup = NUnit.Framework.TearDownAttribute;
-using TestInitialize = NUnit.Framework.SetUpAttribute;
-using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
-using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
-#else
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-#endif
-
-using NUnitAssert = NUnit.Framework.Assert;
-using MsAssert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using SwimLib;
+
+using NUnit.Framework;
 
 namespace SwimTest
 {
-    [TestClass]
+    [TestFixture]
     public class EventTest
     {
-        [TestMethod]
+        [Test]
         public void Event_DefaultConstructor_MustHave1500Distance()
         {
             Event swimEvent = new Event();
@@ -29,7 +17,7 @@ namespace SwimTest
             Assert.AreEqual(expectedEventDistance, swimEvent.Distance, "Distance not properly 1500");
         }
 
-        [TestMethod]
+        [Test]
         public void Event_DefaultConstructor_MustHaveIndividualMedleyStroke()
         {
             Event swimEvent = new Event();
@@ -38,7 +26,7 @@ namespace SwimTest
             Assert.AreEqual(expectedStroke, swimEvent.Stroke, "Stroke not properly Individual Medley");
         }
 
-        [TestMethod]
+        [Test]
         public void EventGetInfo_Adding1Swimmers_MustReturnNotSeededNoSwim()
         {
             Event swimEvent = new Event(EventDistance._100,Stroke.Backstroke);
@@ -50,7 +38,7 @@ namespace SwimTest
             StringAssert.Contains(swimEvent.ToString(), "Not seeded", "GetInfo does not return not seeded no swim");
         }
 
-        [TestMethod]
+        [Test]
         public void EventAddSwimmer_Adding1Swimmer_MustUpdateNoOfRegistrants()
         {
             Event swimEvent = new Event(EventDistance._100, Stroke.Backstroke);
@@ -65,7 +53,7 @@ namespace SwimTest
 
         }
 
-        [TestMethod]
+        [Test]
         public void EventAddSwimmer_AddingSameSwimmerAgain_MustThrowException()
         {
             Event swimEvent = new Event(EventDistance._100, Stroke.Backstroke);
@@ -89,7 +77,7 @@ namespace SwimTest
 
         }
 
-        [TestMethod]
+        [Test]
         public void EventEnterSwimmerTimes_SetSwimTime_MustProperlyShowCorrectGetInfo()
         {
             SwimMeet meet = new SwimMeet("A Swim Meet", new DateTime(2017, 3, 23), new DateTime(2017, 3, 26), PoolType.LCM, 2);

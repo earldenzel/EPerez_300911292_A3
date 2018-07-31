@@ -1,28 +1,15 @@
 ﻿using System;
-
-#if NUNIT
-using TestClass = NUnit.Framework.TestFixtureAttribute;
-using TestMethod = NUnit.Framework.TestAttribute;
-using TestCleanup = NUnit.Framework.TearDownAttribute;
-using TestInitialize = NUnit.Framework.SetUpAttribute;
-using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
-using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
-#else
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-#endif
-
-using NUnitAssert = NUnit.Framework.Assert;
-using MsAssert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
-
 using SwimLib;
+
+using NUnit.Framework;
 
 namespace SwimTest
 {
-    [TestClass]
+    [TestFixture]
     public class ClubTest
     {
 
-        [TestMethod]
+        [Test]
         public void Club_DefaultConstructor_IDMustBeZero()
         {
             //setup
@@ -33,7 +20,7 @@ namespace SwimTest
             Assert.AreEqual(expectedID, club.Number, "ID is not zero");
         }
 
-        [TestMethod]
+        [Test]
         public void Club_SettingName_ShouldAutomaticallySetID()
         {
             //setup
@@ -47,7 +34,7 @@ namespace SwimTest
             Assert.AreNotEqual(notExpectedID, club.Number, "ID was not set on name set");
         }
 
-        [TestMethod]
+        [Test]
         public void ClubUsingAllSet_ClubUsing4ParamConstructor_ShouldHaveSameGetInfo()
         {
             //setup
@@ -63,7 +50,7 @@ namespace SwimTest
             StringAssert.Contains(club1.ToString(), club2.ToString(), "Club Get Info not same");
         }
 
-        [TestMethod]
+        [Test]
         public void ClubUsing3ParamConstructor_AndOneRegistrant_UpdatesNoOfRegistrants()
         {
             //setup
@@ -79,7 +66,7 @@ namespace SwimTest
             Assert.AreEqual(expectedRegistrants, noOfRegistrants, "Registrants not properly added");
         }
 
-        [TestMethod]
+        [Test]
         public void ClubUsing3ParamConstructor_AndOneRegistrant_ProperlySetsClubID()
         {
             //setup
@@ -95,7 +82,7 @@ namespace SwimTest
             Assert.AreEqual(expectedClubNumber, registrantClubNumber, "Registrant club number not properly updated");
         }
 
-        [TestMethod]
+        [Test]
         public void ClubAddSwimmer_AddingRegistrant_UpdatesGetInfo()
         {
             //setup
@@ -106,7 +93,7 @@ namespace SwimTest
             StringAssert.Contains(club.ToString(), "Bob", "GetInfo() not properly updated");
         }
 
-        [TestMethod]
+        [Test]
         public void ClubAddSwimmer_AddingRegistrantsTo2Clubs_ShouldThrowException()
         {
             //setup

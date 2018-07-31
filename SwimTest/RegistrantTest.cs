@@ -1,25 +1,14 @@
 ﻿using System;
-#if NUNIT
-using TestClass = NUnit.Framework.TestFixtureAttribute;
-using TestMethod = NUnit.Framework.TestAttribute;
-using TestCleanup = NUnit.Framework.TearDownAttribute;
-using TestInitialize = NUnit.Framework.SetUpAttribute;
-using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
-using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
-#else
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-#endif
-
-using NUnitAssert = NUnit.Framework.Assert;
-using MsAssert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using SwimLib;
+
+using NUnit.Framework;
 
 namespace SwimTest
 {
-    [TestClass]
+    [TestFixture]
     public class RegistrantTest
     {
-        [TestMethod]
+        [Test]
         public void Registrant_DefaultConstructor_IDMustBeZero()
         {
             //setup
@@ -30,7 +19,7 @@ namespace SwimTest
             Assert.AreEqual(expectedID, registrant.Number, "ID is not zero");
         }
 
-        [TestMethod]
+        [Test]
         public void Registrant_SetName_IDIsAlsoSet()
         {
             //setup
@@ -42,7 +31,7 @@ namespace SwimTest
             Assert.AreNotEqual(notExpectedID, registrant.Number, "ID was not set on name set");
         }
         
-        [TestMethod]
+        [Test]
         public void RegistrantGetInfo_NoClubsAssigned_ReturnsNotAssigned()
         {
             //setup
@@ -53,7 +42,7 @@ namespace SwimTest
             StringAssert.Contains(registrant.ToString(), "Club: not assigned", "Club was assigned");
         }
 
-        [TestMethod]
+        [Test]
         public void RegistrantGetInfo_ClubsAssigned_ShowsClub()
         {
             //setup
@@ -66,7 +55,7 @@ namespace SwimTest
             StringAssert.Contains(registrant.ToString(), "Dummy Club", "Club was not assigned");
         }
 
-        [TestMethod]
+        [Test]
         public void RegistrantUsingAllSet_RegistrantUsing5ParamConstructor_ShouldHaveSameGetInfo()
         {
             Registrant registrant1 = new Registrant();

@@ -1,25 +1,14 @@
 ﻿using System;
-#if NUNIT
-using TestClass = NUnit.Framework.TestFixtureAttribute;
-using TestMethod = NUnit.Framework.TestAttribute;
-using TestCleanup = NUnit.Framework.TearDownAttribute;
-using TestInitialize = NUnit.Framework.SetUpAttribute;
-using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
-using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
-#else
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-#endif
-
-using NUnitAssert = NUnit.Framework.Assert;
-using MsAssert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using SwimLib;
+
+using NUnit.Framework;
 
 namespace SwimTest
 {
-    [TestClass]
+    [TestFixture]
     public class SwimMeetTest
     {
-        [TestMethod]
+        [Test]
         public void SwimMeet_DefaultConstructor_HasPoolTypeSCM()
         {
             SwimMeet meet = new SwimMeet();
@@ -28,7 +17,7 @@ namespace SwimTest
             Assert.AreEqual(expectedPooltype, meet.PoolType);
         }
 
-        [TestMethod]
+        [Test]
         public void SwimMeet_DefaultConstructor_Has8ExpectedLanes()
         {
             SwimMeet meet = new SwimMeet();
@@ -37,7 +26,7 @@ namespace SwimTest
             Assert.AreEqual(expectedLanes, meet.Lanes);
         }
 
-        [TestMethod]
+        [Test]
         public void SwimMeetUsingAllSet_SwimMeetUsingConstructor_MustHaveSameGetInfo()
         {
             SwimMeet meet1 = new SwimMeet("A Swim Meet", new DateTime(2017, 3, 23), new DateTime(2017, 3, 26), PoolType.LCM, 8);
@@ -51,7 +40,7 @@ namespace SwimTest
             StringAssert.Contains(meet1.ToString(), meet2.ToString(), "Get info not the same");
         }
 
-        [TestMethod]
+        [Test]
         public void SwimMeetAddEvent_AddingOneEvent_GetInfoMustShowEvent()
         {
             SwimMeet meet = new SwimMeet("A Swim Meet", new DateTime(2017, 3, 23), new DateTime(2017, 3, 26), PoolType.LCM, 8);
@@ -61,7 +50,7 @@ namespace SwimTest
             StringAssert.Contains(meet.ToString(), "_1500 Individual_Medley", "Event not properly shown in Get Info");
         }
 
-        [TestMethod]
+        [Test]
         public void SwimMeetSeed_Adding5RegistrantsTo2Lanes_LastSwimmerMustHaveHeat3()
         {
             SwimMeet meet = new SwimMeet("A Swim Meet", new DateTime(2017, 3, 23), new DateTime(2017, 3, 26), PoolType.LCM, 2);

@@ -1,26 +1,14 @@
 ﻿using System;
 using SwimLib;
 
-#if NUNIT
-using TestClass = NUnit.Framework.TestFixtureAttribute;
-using TestMethod = NUnit.Framework.TestAttribute;
-using TestCleanup = NUnit.Framework.TearDownAttribute;
-using TestInitialize = NUnit.Framework.SetUpAttribute;
-using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
-using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
-#else
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-#endif
-
-using NUnitAssert = NUnit.Framework.Assert;
-using MsAssert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
+using NUnit.Framework;
 
 namespace SwimTest
 {
-    [TestClass]
+    [TestFixture]
     public class ClubsManagerTest
     {
-        [TestMethod]
+        [Test]
         public void AddClub_Adding1Club_UpdatesNoOfClubs()
         {
             ClubsManager clubManager = new ClubsManager();
@@ -33,7 +21,7 @@ namespace SwimTest
         }
 
 
-        [TestMethod]
+        [Test]
         public void AddClub_AddingSameClubAgain_ShouldReturnException()
         {
             ClubsManager clubManager = new ClubsManager();
@@ -53,7 +41,7 @@ namespace SwimTest
             Assert.Fail();
         }
 
-        [TestMethod]
+        [Test]
         public void GetClub_AddingClubWithProperID_ShouldBeAbleToRetrieveClub()
         {
             ClubsManager clubManager = new ClubsManager();
@@ -64,7 +52,7 @@ namespace SwimTest
             Assert.AreEqual(expectedClub, clubManager.GetByRegNum(100), "Did not retrieve proper club");
         }
 
-        [TestMethod]
+        [Test]
         public void GetClub_FromEmptyManager_ShouldReturnNull()
         {
             ClubsManager clubManager = new ClubsManager();

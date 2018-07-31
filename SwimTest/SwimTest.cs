@@ -1,25 +1,14 @@
 ﻿using System;
-#if NUNIT
-using TestClass = NUnit.Framework.TestFixtureAttribute;
-using TestMethod = NUnit.Framework.TestAttribute;
-using TestCleanup = NUnit.Framework.TearDownAttribute;
-using TestInitialize = NUnit.Framework.SetUpAttribute;
-using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
-using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
-#else
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-#endif
-
-using NUnitAssert = NUnit.Framework.Assert;
-using MsAssert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using SwimLib;
+
+using NUnit.Framework;
 
 namespace SwimTest
 {
-    [TestClass]
+    [TestFixture]
     public class SwimTest
     {
-        [TestMethod]
+        [Test]
         public void Swim_2ParamConstructor_GetInfoReturnsNoTime()
         {
             Swim swim = new Swim(1, 1);
@@ -27,7 +16,7 @@ namespace SwimTest
             StringAssert.Contains(swim.GetInfo(), "no time", "Default time should be no time");
         }
 
-        [TestMethod]
+        [Test]
         public void Swim_3ParamConstructor_GetInfoReturns()
         {
             Swim swim = new Swim("1:30.30",1, 1);

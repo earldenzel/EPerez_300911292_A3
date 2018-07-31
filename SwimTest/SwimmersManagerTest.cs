@@ -1,25 +1,14 @@
 ﻿using System;
-#if NUNIT
-using TestClass = NUnit.Framework.TestFixtureAttribute;
-using TestMethod = NUnit.Framework.TestAttribute;
-using TestCleanup = NUnit.Framework.TearDownAttribute;
-using TestInitialize = NUnit.Framework.SetUpAttribute;
-using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
-using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
-#else
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-#endif
-
-using NUnitAssert = NUnit.Framework.Assert;
-using MsAssert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using SwimLib;
+
+using NUnit.Framework;
 
 namespace SwimTest
 {
-    [TestClass]
+    [TestFixture]
     public class SwimmersManagerTest
     {
-        [TestMethod]
+        [Test]
         public void SwimmersMamagerConstructor_ShouldUpdateClubManagersSwimmerManager()
         {
             ClubsManager clubsManager = new ClubsManager();
@@ -28,7 +17,7 @@ namespace SwimTest
             Assert.AreEqual(expectedSwimmerManager, clubsManager.SwimmerManager);
         }
 
-        [TestMethod]
+        [Test]
         public void AddSwimmerSwimmersMamager_NoNameSwimmer_ShouldThrowException()
         {
             ClubsManager clubsManager = new ClubsManager();
@@ -48,7 +37,7 @@ namespace SwimTest
             Assert.Fail();
         }
 
-        [TestMethod]
+        [Test]
         public void AddSwimmerSwimmersMamager_AddingSameIDSwimmer_ShouldThrowException()
         {
             ClubsManager clubsManager = new ClubsManager();
@@ -69,7 +58,7 @@ namespace SwimTest
             Assert.Fail();
         }
         
-        [TestMethod]
+        [Test]
         public void AddSwimmerSwimmersMamager_AddingSwimmer_ShouldAutomaticallyAddClub()
         {
             ClubsManager clubsManager = new ClubsManager();
@@ -83,7 +72,7 @@ namespace SwimTest
             Assert.AreEqual(expectedClubs, clubsManager.Number, "Club not automaticaly added");
         }
         
-        [TestMethod]
+        [Test]
         public void GetSwimmer_FromEmptyManager_ShouldReturnNull()
         {
             ClubsManager clubManager = new ClubsManager();
@@ -92,7 +81,7 @@ namespace SwimTest
             Assert.IsNull(swimmerManager.GetByRegNum(100), "Should not have swimmers");
         }
 
-        [TestMethod]
+        [Test]
         public void GetSwimmer_AddingSwimmerWithProperID_ShouldBeAbleToRetrieveSwimmer()
         {
             ClubsManager clubManager = new ClubsManager();
