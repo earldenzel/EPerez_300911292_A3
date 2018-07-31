@@ -1,8 +1,8 @@
 language: csharp
 solution: EPerez_300911292_A3.sln
-before_install:
-  - sudo apt-get install nunit-console
-before_script:
+install:
   - nuget restore EPerez_300911292_A3.sln
-after_script:
-  - nunit-console SwimTest/bin/Release/SwimTest.dll
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release EPerez_300911292_A3.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./SwimTest/bin/Release/SwimTest.dll
