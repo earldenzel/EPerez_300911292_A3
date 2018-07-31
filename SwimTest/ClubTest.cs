@@ -17,7 +17,7 @@ namespace SwimTest
             int expectedID = 0;
 
             //assert
-            Assert.AreEqual(expectedID, club.Number, "ID is not zero");
+            Assert.AreEqual(expectedID, club.Number);
         }
 
         [Test]
@@ -31,7 +31,7 @@ namespace SwimTest
             club.Name = "Dummy Club";
 
             //assert
-            Assert.AreNotEqual(notExpectedID, club.Number, "ID was not set on name set");
+            Assert.AreNotEqual(notExpectedID, club.Number);
         }
 
         [Test]
@@ -47,7 +47,7 @@ namespace SwimTest
             Club club2 = new Club("CCAC #2", new Address("37 River St", "Toronto", "ON", "M2M 5M5"), 4165555557, 100);
 
             //assert
-            StringAssert.Contains(club1.ToString(), club2.ToString(), "Club Get Info not same");
+            StringAssert.Contains(club1.ToString(), club2.ToString());
         }
 
         [Test]
@@ -63,7 +63,7 @@ namespace SwimTest
             int noOfRegistrants = club.NoOfRegistrants;
 
             //assert
-            Assert.AreEqual(expectedRegistrants, noOfRegistrants, "Registrants not properly added");
+            Assert.AreEqual(expectedRegistrants, noOfRegistrants);
         }
 
         [Test]
@@ -79,7 +79,7 @@ namespace SwimTest
             int registrantClubNumber = registrant.Club.Number;
 
             //assert
-            Assert.AreEqual(expectedClubNumber, registrantClubNumber, "Registrant club number not properly updated");
+            Assert.AreEqual(expectedClubNumber, registrantClubNumber);
         }
 
         [Test]
@@ -90,7 +90,7 @@ namespace SwimTest
             Registrant registrant = new Registrant("Bob", new DateTime(), new Address(), 0, 200);
             club.AddSwimmer(registrant);
 
-            StringAssert.Contains(club.ToString(), "Bob", "GetInfo() not properly updated");
+            StringAssert.Contains(club.ToString(), "Bob");
         }
 
         [Test]

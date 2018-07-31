@@ -37,7 +37,7 @@ namespace SwimTest
             meet2.PoolType = PoolType.LCM;
             meet2.Lanes = 8;
 
-            StringAssert.Contains(meet1.ToString(), meet2.ToString(), "Get info not the same");
+            StringAssert.Contains(meet1.ToString(), meet2.ToString());
         }
 
         [Test]
@@ -47,7 +47,7 @@ namespace SwimTest
             Event swimEvent = new Event();
             meet.AddEvent(swimEvent);
 
-            StringAssert.Contains(meet.ToString(), "_1500 Individual_Medley", "Event not properly shown in Get Info");
+            StringAssert.Contains(meet.ToString(), "_1500 Individual_Medley");
         }
 
         [Test]
@@ -69,7 +69,7 @@ namespace SwimTest
             meet.Seed();
             int expectedHeatForSwimmerID4 = 3;
 
-            Assert.AreEqual(expectedHeatForSwimmerID4, swimEvent.Swims[4].Heat, "Expected heat value not achieved");
+            Assert.AreEqual(expectedHeatForSwimmerID4, swimEvent.Swims[4].Heat);
         }
     }
 }

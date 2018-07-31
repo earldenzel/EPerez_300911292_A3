@@ -13,7 +13,7 @@ namespace SwimTest
         {
             Swim swim = new Swim(1, 1);
 
-            StringAssert.Contains(swim.GetInfo(), "no time", "Default time should be no time");
+            StringAssert.Contains(swim.GetInfo(), "no time");
         }
 
         [Test]
@@ -23,7 +23,7 @@ namespace SwimTest
             swim.Heat = 2;
             swim.Lane = 2;
 
-            StringAssert.Contains(swim.GetInfo(), "1:30.30", "Get Info Must have Values");
+            StringAssert.Contains(swim.GetInfo(), "1:30.30");
         }
     }
 }

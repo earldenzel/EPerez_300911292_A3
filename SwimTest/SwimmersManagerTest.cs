@@ -31,7 +31,7 @@ namespace SwimTest
             }
             catch(Exception ex)
             {
-                StringAssert.Contains(ex.Message, "Invalid swimmer name:", "Swimmer Manager should not add unnamed swimmer");
+                StringAssert.Contains(ex.Message, "Invalid swimmer name:");
                 return;
             }
             Assert.Fail();
@@ -52,7 +52,7 @@ namespace SwimTest
             }
             catch (Exception ex)
             {
-                StringAssert.Contains(ex.Message, "Swimmer with the registration number already exists:", "Swimmer Manager swimmers should have unique id");
+                StringAssert.Contains(ex.Message, "Swimmer with the registration number already exists:");
                 return;
             }
             Assert.Fail();
@@ -69,7 +69,7 @@ namespace SwimTest
             swimmerManager.Add(swimmer);
             int expectedClubs = 1;
 
-            Assert.AreEqual(expectedClubs, clubsManager.Number, "Club not automaticaly added");
+            Assert.AreEqual(expectedClubs, clubsManager.Number);
         }
         
         [Test]
@@ -78,7 +78,7 @@ namespace SwimTest
             ClubsManager clubManager = new ClubsManager();
             SwimmersManager swimmerManager = new SwimmersManager(clubManager);
 
-            Assert.IsNull(swimmerManager.GetByRegNum(100), "Should not have swimmers");
+            Assert.IsNull(swimmerManager.GetByRegNum(100));
         }
 
         [Test]
@@ -90,7 +90,7 @@ namespace SwimTest
             Registrant expectedRegistrant = new Registrant("New Registrant", new DateTime(), new Address(), 1, 100);
             swimmerManager.Add(expectedRegistrant);
 
-            Assert.AreEqual(expectedRegistrant, swimmerManager.GetByRegNum(100), "Did not retrieve proper swimmer");
+            Assert.AreEqual(expectedRegistrant, swimmerManager.GetByRegNum(100));
         }
     }
 }

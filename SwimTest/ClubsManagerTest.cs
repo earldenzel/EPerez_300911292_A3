@@ -17,7 +17,7 @@ namespace SwimTest
             clubManager.Add(club);
             int expectedClubs = 1;
 
-            Assert.AreEqual(expectedClubs, clubManager.Number, "Club not properly added");
+            Assert.AreEqual(expectedClubs, clubManager.Number);
         }
 
 
@@ -49,7 +49,7 @@ namespace SwimTest
 
             clubManager.Add(expectedClub);
 
-            Assert.AreEqual(expectedClub, clubManager.GetByRegNum(100), "Did not retrieve proper club");
+            Assert.AreEqual(expectedClub, clubManager.GetByRegNum(100));
         }
 
         [Test]
@@ -57,7 +57,7 @@ namespace SwimTest
         {
             ClubsManager clubManager = new ClubsManager();
             
-            Assert.IsNull(clubManager.GetByRegNum(100), "Should not have clubs");
+            Assert.IsNull(clubManager.GetByRegNum(100));
         }
     }
 }

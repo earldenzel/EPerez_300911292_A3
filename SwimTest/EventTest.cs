@@ -14,7 +14,7 @@ namespace SwimTest
             Event swimEvent = new Event();
             EventDistance expectedEventDistance = EventDistance._1500;
 
-            Assert.AreEqual(expectedEventDistance, swimEvent.Distance, "Distance not properly 1500");
+            Assert.AreEqual(expectedEventDistance, swimEvent.Distance);
         }
 
         [Test]
@@ -23,7 +23,7 @@ namespace SwimTest
             Event swimEvent = new Event();
             Stroke expectedStroke = Stroke.Individual_Medley;
 
-            Assert.AreEqual(expectedStroke, swimEvent.Stroke, "Stroke not properly Individual Medley");
+            Assert.AreEqual(expectedStroke, swimEvent.Stroke);
         }
 
         [Test]
@@ -35,7 +35,7 @@ namespace SwimTest
             registrant.Name = "Bob";
             swimEvent.AddSwimmer(registrant);
 
-            StringAssert.Contains(swimEvent.ToString(), "Not seeded", "GetInfo does not return not seeded no swim");
+            StringAssert.Contains(swimEvent.ToString(), "Not seeded");
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace SwimTest
             swimEvent.AddSwimmer(registrant);
             int expectedSwimmers = 1;
 
-            Assert.AreEqual(expectedSwimmers, swimEvent.NoOfRegistrants, "Number of registrants not updating");
+            Assert.AreEqual(expectedSwimmers, swimEvent.NoOfRegistrants);
 
         }
 
@@ -88,7 +88,7 @@ namespace SwimTest
             meet.Seed();
             swimEvent.EnterSwimmersTime(registrant, "1:01.01");
 
-            StringAssert.Contains(swimEvent.ToString(), "1:01.01", "Get Info not working properly");
+            StringAssert.Contains(swimEvent.ToString(), "1:01.01");
 
 
 
