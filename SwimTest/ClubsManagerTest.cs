@@ -15,7 +15,7 @@ namespace SwimTest
             Club club = new Club();
             club.Name = "Managed Club";
             clubManager.Add(club);
-            int expectedClubs = 1;
+            var expectedClubs = 1;
 
             Assert.AreEqual(expectedClubs, clubManager.Number);
         }
@@ -35,7 +35,7 @@ namespace SwimTest
             }
             catch (Exception ex)
             {
-                StringAssert.Contains(ex.Message, "Invalid club record. Club with the registration number already exists:");
+                StringAssert.Contains("Invalid club record. Club with the registration number already exists:", ex.Message);
                 return;
             }
             Assert.Fail();

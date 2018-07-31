@@ -35,7 +35,7 @@ namespace SwimTest
             registrant.Name = "Bob";
             swimEvent.AddSwimmer(registrant);
 
-            StringAssert.Contains(swimEvent.ToString(), "Not seeded");
+            StringAssert.Contains("Not seeded", swimEvent.ToString());
         }
 
         [Test]
@@ -47,7 +47,7 @@ namespace SwimTest
             registrant.Name = "Bob";
 
             swimEvent.AddSwimmer(registrant);
-            int expectedSwimmers = 1;
+            var expectedSwimmers = 1;
 
             Assert.AreEqual(expectedSwimmers, swimEvent.NoOfRegistrants);
 
@@ -70,7 +70,7 @@ namespace SwimTest
             }
             catch (Exception ex)
             {
-                StringAssert.Contains(ex.Message, "Swimmer Bob,100 is already entered");
+                StringAssert.Contains("Swimmer Bob,100 is already entered", ex.Message);
                 return;
             }
             Assert.Fail();
@@ -88,7 +88,7 @@ namespace SwimTest
             meet.Seed();
             swimEvent.EnterSwimmersTime(registrant, "1:01.01");
 
-            StringAssert.Contains(swimEvent.ToString(), "1:01.01");
+            StringAssert.Contains("1:01.01",swimEvent.ToString());
 
 
 

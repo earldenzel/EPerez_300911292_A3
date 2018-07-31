@@ -31,7 +31,7 @@ namespace SwimTest
             }
             catch(Exception ex)
             {
-                StringAssert.Contains(ex.Message, "Invalid swimmer name:");
+                StringAssert.Contains("Invalid swimmer name:", ex.Message);
                 return;
             }
             Assert.Fail();
@@ -52,7 +52,7 @@ namespace SwimTest
             }
             catch (Exception ex)
             {
-                StringAssert.Contains(ex.Message, "Swimmer with the registration number already exists:");
+                StringAssert.Contains("Swimmer with the registration number already exists:", ex.Message);
                 return;
             }
             Assert.Fail();
@@ -67,7 +67,7 @@ namespace SwimTest
             swimmer.Name = "Bob";
             swimmer.Club = new Club("Random Club", new Address(), 1);
             swimmerManager.Add(swimmer);
-            int expectedClubs = 1;
+            var expectedClubs = 1;
 
             Assert.AreEqual(expectedClubs, clubsManager.Number);
         }

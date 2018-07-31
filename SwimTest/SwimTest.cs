@@ -13,7 +13,7 @@ namespace SwimTest
         {
             Swim swim = new Swim(1, 1);
 
-            StringAssert.Contains(swim.GetInfo(), "no time");
+            StringAssert.Contains("no time", swim.GetInfo());
         }
 
         [Test]
@@ -23,7 +23,7 @@ namespace SwimTest
             swim.Heat = 2;
             swim.Lane = 2;
 
-            StringAssert.Contains(swim.GetInfo(), "1:30.30");
+            StringAssert.Contains("1:30.30", swim.GetInfo());
         }
     }
 }

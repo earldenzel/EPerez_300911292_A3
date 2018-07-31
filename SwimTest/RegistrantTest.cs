@@ -13,7 +13,7 @@ namespace SwimTest
         {
             //setup
             Registrant registrant = new Registrant();
-            int expectedID = 0;
+            var expectedID = 0;
 
             //assert
             Assert.AreEqual(expectedID, registrant.Number);
@@ -24,7 +24,7 @@ namespace SwimTest
         {
             //setup
             Registrant registrant = new Registrant();
-            int notExpectedID = 0;
+            var notExpectedID = 0;
             registrant.Name = "Bob";
 
             //assert - are not equal is used because I have no idea when this test is going to be run. It will have an id that depends on the singleton class
@@ -39,7 +39,7 @@ namespace SwimTest
             registrant.Name = "Bob";
 
             //assert
-            StringAssert.Contains(registrant.ToString(), "Club: not assigned");
+            StringAssert.Contains("Club: not assigned", registrant.ToString());
         }
 
         [Test]
@@ -52,7 +52,7 @@ namespace SwimTest
             registrant.Club = club;
 
             //assert
-            StringAssert.Contains(registrant.ToString(), "Dummy Club");
+            StringAssert.Contains("Dummy Club", registrant.ToString());
         }
 
         [Test]

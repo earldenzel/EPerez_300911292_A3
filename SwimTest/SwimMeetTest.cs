@@ -21,7 +21,7 @@ namespace SwimTest
         public void SwimMeet_DefaultConstructor_Has8ExpectedLanes()
         {
             SwimMeet meet = new SwimMeet();
-            int expectedLanes = 8;
+            var expectedLanes = 8;
 
             Assert.AreEqual(expectedLanes, meet.Lanes);
         }
@@ -47,7 +47,7 @@ namespace SwimTest
             Event swimEvent = new Event();
             meet.AddEvent(swimEvent);
 
-            StringAssert.Contains(meet.ToString(), "_1500 Individual_Medley");
+            StringAssert.Contains("_1500 Individual_Medley", meet.ToString());
         }
 
         [Test]
@@ -67,7 +67,7 @@ namespace SwimTest
                 swimEvent.AddSwimmer(registrant);
             }
             meet.Seed();
-            int expectedHeatForSwimmerID4 = 3;
+            var expectedHeatForSwimmerID4 = 3;
 
             Assert.AreEqual(expectedHeatForSwimmerID4, swimEvent.Swims[4].Heat);
         }

@@ -14,7 +14,7 @@ namespace SwimTest
         {
             //setup
             Club club = new Club();
-            int expectedID = 0;
+            var expectedID = 0;
 
             //assert
             Assert.AreEqual(expectedID, club.Number);
@@ -25,7 +25,7 @@ namespace SwimTest
         {
             //setup
             Club club = new Club();
-            int notExpectedID = 0;
+            var notExpectedID = 0;
 
             //act
             club.Name = "Dummy Club";
@@ -55,12 +55,12 @@ namespace SwimTest
         {
             //setup
             Club club = new Club("CCAC", new Address("35 River St", "Toronto", "ON", "M2M 5M5"), 4165555555);
-            int expectedRegistrants = 1;
+            var expectedRegistrants = 1;
             Registrant registrant = new Registrant("Bob", new DateTime(), new Address(), 0);
             club.AddSwimmer(registrant);
 
             //act
-            int noOfRegistrants = club.NoOfRegistrants;
+            var noOfRegistrants = club.NoOfRegistrants;
 
             //assert
             Assert.AreEqual(expectedRegistrants, noOfRegistrants);
@@ -71,12 +71,12 @@ namespace SwimTest
         {
             //setup
             Club club = new Club("CCAC", new Address("35 River St", "Toronto", "ON", "M2M 5M5"), 4165555555);
-            int expectedClubNumber = club.Number;
+            var expectedClubNumber = club.Number;
             Registrant registrant = new Registrant("Bob", new DateTime(), new Address(), 0);
             club.AddSwimmer(registrant);
 
             //act
-            int registrantClubNumber = registrant.Club.Number;
+            var registrantClubNumber = registrant.Club.Number;
 
             //assert
             Assert.AreEqual(expectedClubNumber, registrantClubNumber);
@@ -90,7 +90,7 @@ namespace SwimTest
             Registrant registrant = new Registrant("Bob", new DateTime(), new Address(), 0, 200);
             club.AddSwimmer(registrant);
 
-            StringAssert.Contains(club.ToString(), "Bob");
+            StringAssert.Contains("Bob",club.ToString());
         }
 
         [Test]
@@ -109,7 +109,7 @@ namespace SwimTest
             }
             catch (Exception ex)
             {
-                StringAssert.Contains(ex.Message, "Swimmer is registered with a different club");
+                StringAssert.Contains("Swimmer is registered with a different club", ex.Message);
                 return;
             }
             Assert.Fail();            
