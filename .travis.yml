@@ -1,0 +1,7 @@
+language: csharp
+solution: "./EPerez_300911292_A3.sln"
+install:
+- travis_retry nuget restore -source "https://www.nuget.org/api/v2" .EPerez_300911292_A3.sln
+script:
+- xbuild ./EPerez_300911292_A3.sln
+- mono ./Fibonacci/packages/xunit.runner.console*/tools/xunit.console.exe ./SwimTest/obj/Debug/SwimTest.dll
