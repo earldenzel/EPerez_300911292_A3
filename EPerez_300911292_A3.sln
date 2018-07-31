@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimLib", "SwimLib\SwimLib.csproj", "{5827E0CD-5945-48A5-99BE-336768595A4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimTest", "SwimTest\SwimTest.csproj", "{E6E9273F-20AD-4769-9575-6A56F20E8507}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimProgram", "SwimProgram\SwimProgram.csproj", "{9C9B943A-9AB0-4D3A-91DA-A79AFD374FE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5827E0CD-5945-48A5-99BE-336768595A4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5827E0CD-5945-48A5-99BE-336768595A4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5827E0CD-5945-48A5-99BE-336768595A4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5827E0CD-5945-48A5-99BE-336768595A4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6E9273F-20AD-4769-9575-6A56F20E8507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6E9273F-20AD-4769-9575-6A56F20E8507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6E9273F-20AD-4769-9575-6A56F20E8507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6E9273F-20AD-4769-9575-6A56F20E8507}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C9B943A-9AB0-4D3A-91DA-A79AFD374FE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C9B943A-9AB0-4D3A-91DA-A79AFD374FE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C9B943A-9AB0-4D3A-91DA-A79AFD374FE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C9B943A-9AB0-4D3A-91DA-A79AFD374FE5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

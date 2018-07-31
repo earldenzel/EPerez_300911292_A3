@@ -1,0 +1,15 @@
+C:\Users\300911292\Desktop\EPerez_300911292_A3\SwimLib\bin\Debug\SwimLib.dll
+C:\Users\300911292\Desktop\EPerez_300911292_A3\SwimLib\bin\Debug\SwimLib.pdb
+C:\Users\300911292\Desktop\EPerez_300911292_A3\SwimLib\obj\Debug\SwimLib.dll
+C:\Users\300911292\Desktop\EPerez_300911292_A3\SwimLib\obj\Debug\SwimLib.pdb
+C:\Users\Pauline\Desktop\EPerez_300911292_A3\SwimLib\bin\Debug\SwimLib.dll
+C:\Users\Pauline\Desktop\EPerez_300911292_A3\SwimLib\bin\Debug\SwimLib.pdb
+C:\Users\Pauline\Desktop\EPerez_300911292_A3\SwimLib\obj\Debug\SwimLib.csprojResolveAssemblyReference.cache
+C:\Users\Pauline\Desktop\EPerez_300911292_A3\SwimLib\obj\Debug\SwimLib.dll
+C:\Users\Pauline\Desktop\EPerez_300911292_A3\SwimLib\obj\Debug\SwimLib.pdb
+C:\Users\300911292\Desktop\EPerez_300911292_A3\SwimLib\obj\Debug\SwimLib.csprojResolveAssemblyReference.cache
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimLib\bin\Debug\SwimLib.dll
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimLib\bin\Debug\SwimLib.pdb
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimLib\obj\Debug\SwimLib.csprojResolveAssemblyReference.cache
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimLib\obj\Debug\SwimLib.dll
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimLib\obj\Debug\SwimLib.pdb
