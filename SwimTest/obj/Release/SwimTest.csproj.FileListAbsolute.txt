@@ -5,3 +5,6 @@ C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimTest\bin\Release\SwimLib.pdb
 C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimTest\obj\Release\SwimTest.csprojResolveAssemblyReference.cache
 C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimTest\obj\Release\SwimTest.dll
 C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimTest\obj\Release\SwimTest.pdb
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimTest\bin\Release\nunit.framework.dll
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimTest\bin\Release\nunit.framework.pdb
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimTest\bin\Release\nunit.framework.xml

@@ -1,0 +1,8 @@
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimProgram\bin\Release\SwimProgram.exe.config
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimProgram\bin\Release\SwimProgram.exe
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimProgram\bin\Release\SwimProgram.pdb
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimProgram\bin\Release\SwimLib.dll
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimProgram\bin\Release\SwimLib.pdb
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimProgram\obj\Release\SwimProgram.csprojResolveAssemblyReference.cache
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimProgram\obj\Release\SwimProgram.exe
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimProgram\obj\Release\SwimProgram.pdb
