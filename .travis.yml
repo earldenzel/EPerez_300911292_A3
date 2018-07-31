@@ -5,4 +5,4 @@ before_install:
 before_script:
   - nuget restore EPerez_300911292_A3.sln
 after_script:
-  - nunit-console SwimTest/bin/Debug/SwimTest.dll
+  - nunit-console SwimTest/bin/Release/SwimTest.dll
