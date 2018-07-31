@@ -1,0 +1,5 @@
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimLib\bin\Release\SwimLib.dll
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimLib\bin\Release\SwimLib.pdb
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimLib\obj\Release\SwimLib.csprojResolveAssemblyReference.cache
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimLib\obj\Release\SwimLib.dll
+C:\Users\Pauline\Documents\EPerez_300911292_A3\SwimLib\obj\Release\SwimLib.pdb
