@@ -8,32 +8,7 @@ namespace SwimTest
     [TestFixture]
     public class ClubTest
     {
-
-        [Test]
-        public void Club_DefaultConstructor_IDMustBeZero()
-        {
-            //setup
-            Club club = new Club();
-            var expectedID = 0;
-
-            //assert
-            Assert.AreEqual(expectedID, club.Number);
-        }
-
-        [Test]
-        public void Club_SettingName_ShouldAutomaticallySetID()
-        {
-            //setup
-            Club club = new Club();
-            var notExpectedID = 0;
-
-            //act
-            club.Name = "Dummy Club";
-
-            //assert
-            Assert.AreNotEqual(notExpectedID, club.Number);
-        }
-
+        
         [Test]
         public void ClubUsingAllSet_ClubUsing4ParamConstructor_ShouldHaveSameGetInfo()
         {
@@ -48,38 +23,6 @@ namespace SwimTest
 
             //assert
             StringAssert.Contains(club1.ToString(), club2.ToString());
-        }
-
-        [Test]
-        public void ClubUsing3ParamConstructor_AndOneRegistrant_UpdatesNoOfRegistrants()
-        {
-            //setup
-            Club club = new Club("CCAC", new Address("35 River St", "Toronto", "ON", "M2M 5M5"), 4165555555);
-            var expectedRegistrants = 1;
-            Registrant registrant = new Registrant("Bob", new DateTime(), new Address(), 0);
-            club.AddSwimmer(registrant);
-
-            //act
-            var noOfRegistrants = club.NoOfRegistrants;
-
-            //assert
-            Assert.AreEqual(expectedRegistrants, noOfRegistrants);
-        }
-
-        [Test]
-        public void ClubUsing3ParamConstructor_AndOneRegistrant_ProperlySetsClubID()
-        {
-            //setup
-            Club club = new Club("CCAC", new Address("35 River St", "Toronto", "ON", "M2M 5M5"), 4165555555);
-            var expectedClubNumber = club.Number;
-            Registrant registrant = new Registrant("Bob", new DateTime(), new Address(), 0);
-            club.AddSwimmer(registrant);
-
-            //act
-            var registrantClubNumber = registrant.Club.Number;
-
-            //assert
-            Assert.AreEqual(expectedClubNumber, registrantClubNumber);
         }
 
         [Test]
